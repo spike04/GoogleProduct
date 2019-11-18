@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../models/Product.dart';
+import '../../widgets/fade_page_route.dart';
+import '../product_detail_page/product_detail_page.dart';
 import 'blue_button.dart';
 
 class LeftImageProductItemWidget extends StatelessWidget {
@@ -15,47 +17,62 @@ class LeftImageProductItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.only(left: 32),
-      height: screenHeight * 0.25,
-      color: product.backgroundColor,
-      child: Row(
-        children: <Widget>[
-          Expanded(
-            flex: 5,
-            child: Image.asset(product.imagePath),
-          ),
-          Expanded(
-            flex: 4,
-            child: Padding(
-              padding: const EdgeInsets.only(left: 16.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text(
-                    product.name,
-                    style: TextStyle(
-                      fontSize: 17,
-                      fontWeight: FontWeight.w900,
-                    ),
-                  ),
-                  Text(
-                    product.description,
-                    style: TextStyle(
-                      fontSize: 8,
-                      color: Color(0xFF909090),
-                    ),
-                  ),
-                  SizedBox(height: 5),
-                  BlueButton(
-                    product: product,
-                  ),
-                ],
-              ),
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          FadePageRoute(
+            widget: ProductDetailPage(
+              product: product,
             ),
           ),
-        ],
+        );
+      },
+      child: Container(
+        padding: EdgeInsets.only(left: 32),
+        height: screenHeight * 0.25,
+        color: product.backgroundColor,
+        child: Row(
+          children: <Widget>[
+            Expanded(
+              flex: 5,
+              child: Hero(
+                tag: product.name,
+                child: Image.asset(product.imagePath),
+              ),
+            ),
+            Expanded(
+              flex: 4,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text(
+                      product.name,
+                      style: TextStyle(
+                        fontSize: 17,
+                        fontWeight: FontWeight.w900,
+                      ),
+                    ),
+                    Text(
+                      product.description,
+                      style: TextStyle(
+                        fontSize: 8,
+                        color: Color(0xFF909090),
+                      ),
+                    ),
+                    SizedBox(height: 5),
+                    BlueButton(
+                      product: product,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

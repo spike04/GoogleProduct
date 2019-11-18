@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:google_product/models/Product.dart';
-import 'package:google_product/widgets/red_button.dart';
 
+import '../../models/Product.dart';
+import '../../widgets/red_button.dart';
 import 'icon_title_widget.dart';
 
 class ProductContentWidget extends StatelessWidget {
@@ -22,9 +22,12 @@ class ProductContentWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           SizedBox(height: screenHeight * 0.2),
-          Image.asset(
-            product.imagePath,
-            height: screenHeight * 0.3,
+          Hero(
+            tag: product.name,
+            child: Image.asset(
+              product.imagePath,
+              height: screenHeight * 0.3,
+            ),
           ),
           Row(
             mainAxisSize: MainAxisSize.max,
