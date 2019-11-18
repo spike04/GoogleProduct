@@ -6,8 +6,8 @@ A Sample Project Showcasing the Google Products
 
 ### Pages
 
-| Pages                | Screenshot                                 |
-| -------------------- | ------------------------------------------ |
-| Product Listing Page | <img src="snapshots/gp1.jpg" width="300"/> |
+| Product Listing Page                       | Product Detail Page                        |
+| ------------------------------------------ | ------------------------------------------ |
+| <img src="snapshots/gp1.jpg" width="300"/> | <img src="snapshots/gp2.jpg" width="300"/> |
 
-More Pages Comming Soon ... 🎉🤘
+Some Things Remain ... 🎉🤘

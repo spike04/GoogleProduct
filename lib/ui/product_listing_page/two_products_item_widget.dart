@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:google_product/models/Product.dart';
 
+import '../../models/Product.dart';
 import 'vertical_product_item_widget.dart';
 
 class TwoProductsItemWidget extends StatelessWidget {

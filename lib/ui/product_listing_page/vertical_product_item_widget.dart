@@ -17,6 +17,7 @@ class VerticalProductItemWidget extends StatelessWidget {
     return Container(
       color: product.backgroundColor,
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Image.asset(
             product.imagePath,

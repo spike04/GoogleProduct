@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:google_product/models/Product.dart';
-import 'package:google_product/ui/product_listing_page/blue_button.dart';
+
+import '../../models/Product.dart';
+import 'blue_button.dart';
 
 class LeftImageProductItemWidget extends StatelessWidget {
   final screenHeight;
